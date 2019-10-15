@@ -1,5 +1,8 @@
 package com.tc.observe.observe01;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Description:
  * <p>
@@ -12,4 +15,20 @@ package com.tc.observe.observe01;
  * @version: 1.0
  */
 public class Subject {
+
+    public List<Observer> observers = new ArrayList<>();
+   /* public Subject(Observer observer){
+        super();
+    }*/
+    public void attach(Observer observer){
+        observers.add(observer);
+    }
+    public void detach(Observer observer){
+        observers.remove(observer);
+    }
+    protected void notifyObservers(){
+        for(Observer observer:observers ){
+            observer.update(this);
+        }
+    }
 }
