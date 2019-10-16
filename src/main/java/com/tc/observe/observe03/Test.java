@@ -23,5 +23,6 @@ public class Test {
         subjectJdk.addObserver(weatherObserver1);
         subjectJdk.addObserver(weatherObserver2);
         subjectJdk.setContent("1块钱");
+        System.out.println("test=====================fff===ffff===ff==========");
     }
 }
